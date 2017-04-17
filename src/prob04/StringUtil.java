@@ -5,7 +5,7 @@ public class StringUtil {
 	
     public static String concatenate(String[] str) {
     	
-    	String resultStr=null;
+    	String resultStr="";
     	
     	for(int i=0;i<str.length;i++)
     	{

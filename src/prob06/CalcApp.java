@@ -7,93 +7,47 @@ public class CalcApp {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		String [] str2= new String [3];
+		String[] str2 = new String[3];
 		while (true) {
 			/* 코드를 완성 합니다 */
-			String str= scanner.nextLine();
-			StringTokenizer st = str.nextToken();
+			System.out.println(">>");
+			String str = scanner.nextLine();
+			if(str.equals("quit"))
+			{
+				break;
+			}
+			String[] token = str.split(" ");
+			int value1 = Integer.parseInt(token[0]);
+			int value2 = Integer.parseInt(token[2]);
 
-		/*
-		 * scanner.close();
-		 */
-	}
+			switch (token[1]) {
+			case "+":
+				Add add = new Add();
+				add.setValue(value1, value2);
+				int result=add.Calculator();
+				System.out.println(">>"+result);
+				break;
+			case "-":
+				Sub sub = new Sub();
+				sub.setValue(value1, value2);
+				result=sub.Calculator();
+				System.out.println(">>"+result);
+				break;
+			case "*":
+				Mul mul = new Mul();
+				mul.setValue(value1, value2);
+				result=mul.Calculator();
+				System.out.println(">>"+result);
+				break;
+			case "/" :
+				Div div = new Div();
+				div.setValue(value1, value2);
+				result=div.Calculator();
+				System.out.println(">>"+result);
+				break;
+			}
 
-}
-
-class Add {
-	int a;
-	int b;
-
-	void setValue(int a, int b) {
-		this.a = a;
-		this.b = b;
-
-	}
-
-	int Calculator() {
-
-		return a + b;
-
-	}
-}
-
-class sub {
-	int a;
-	int b;
-
-	void setValue(int a, int b) {
-		this.a = a;
-		this.b = b;
-	}
-
-	int Calculator() {
-		if (a > b) {
-			return a - b;
-		} else {
-			return b - a;
 		}
 
 	}
-
-}
-
-class Mul {
-	int a;
-	int b;
-
-	void setValue(int a, int b) {
-		this.a = a;
-		this.b = b;
-	}
-
-	int Calculator() {
-		
-		return a*b;
-
-	}
-
-}
-
-class div {
-	int a;
-	int b;
-
-	void setValue(int a, int b) {
-		this.a = a;
-		this.b = b;
-	}
-
-	int Calculator() {
-		if(b==0)
-		{
-			System.out.println("계산이 불가능합니다.");
-			return b;
-		}else
-		{
-			return a/b;
-		}
-		
-
-	}
-
 }

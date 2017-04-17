@@ -35,6 +35,7 @@ public class CurrencyConverter {
 
 	public static void setRate(double rate) {
 		// 환율 설정(KRW/$1)	
+		CurrencyConverter.rate=rate;
 
 	}
 }
